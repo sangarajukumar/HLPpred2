@@ -1,0 +1,19 @@
+name: hlppred2
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy>=1.24.0
+  - pandas>=2.0.0
+  - scipy>=1.10.0
+  - scikit-learn>=1.2.0
+  - pyyaml>=6.0
+  - tqdm>=4.65.0
+  - pip:
+    - torch>=2.0.0
+    - lightning>=2.0.0
+    - biopython>=1.80

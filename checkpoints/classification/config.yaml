@@ -1,0 +1,43 @@
+dataset:
+  feature_list:
+  - SeqVecEmbedder
+  max_length: 39
+  mean: false
+  merci_file_path_test: /home/Hemopi-Proj/11-Motif/3-motif-files/3-motif-files-updated/test_merci_scores.txt
+  merci_file_path_train: /home/Hemopi-Proj/11-Motif/3-motif-files/3-motif-files-updated/train_merci_scores.txt
+  probs_file_path_test: /home/Hemopi-Proj/12-DL/3-Proba-Fe/Testing/Top300-Proba-Fe_Test.txt
+  probs_file_path_train: /home/Hemopi-Proj/12-DL/3-Proba-Fe/Training/Top300-Proba-Fe_Train.txt
+  test_data_root: /home/Hemopi-Proj/16-DeepTYLCV-arch/2-Fe/Testing
+  test_fasta_path: /home/Hemopi-Proj/1-dataset/Independent.fasta
+  train_data_root: /home/Hemopi-Proj/16-DeepTYLCV-arch/2-Fe/Training
+  train_fasta_path: /home/Hemopi-Proj/1-dataset/Training.fasta
+  tran_nlp: true
+model:
+  d_model: 256
+  dilation: 1
+  dp_size: 0.1
+  fc_1: 128
+  feature_dim_list:
+  - 1024
+  kernel_size:
+  - 1
+  - 3
+  - 5
+  max_concatenated_len: 39
+  merci_feature_dim: 1
+  n_classes: 2
+  n_head: 8
+  norm_type: norm
+  num_transformer_layers: 6
+  prob_feature_dim: 300
+  stride: 1
+save_config: true
+seed: 69
+trainer:
+  batch_size: 8
+  device: cuda
+  epochs: 100
+  lr: 0.0001
+  n_splits: 5
+  num_workers: 1
+  output_path: /home/Hemopi-Proj/16-DeepTYLCV-arch/sweeper_results/Topn-Proba-Fe/Top-1/configs/sweeper_43
