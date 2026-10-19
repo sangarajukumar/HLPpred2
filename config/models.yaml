@@ -1,0 +1,9 @@
+classification:
+  ml_dir: HLPpred2_classification_ML
+  dl_dir: HLPpred2_classification_DL
+  legacy_padding_mask: true
+
+regression:
+  ml_dir: HLPpred2_regression_ML
+  dl_dir: HLPpred2_regression_DL
+  legacy_padding_mask: true

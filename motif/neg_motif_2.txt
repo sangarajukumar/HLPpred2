@@ -1,0 +1,19 @@
+MERCI - Summary of options:
+ -p    /home/vinoth/SKKU-2025-Projects/Sep-2025-Proj/Hemopi-Proj/17-Motif-Final/1-data/Ind_Neg.fasta
+ -n    /home/vinoth/SKKU-2025-Projects/Sep-2025-Proj/Hemopi-Proj/17-Motif-Final/1-data/Ind_Pos.fasta
+ -k 	  500
+ -fp   10
+ -fn   0
+ -o    /home/vinoth/SKKU-2025-Projects/Sep-2025-Proj/Hemopi-Proj/17-Motif-Final/Motif-files/Independent/neg_motif_2.txt
+ -l    10000
+ -s    10000
+ -c    KOOLMAN-ROHM
+ -g    0
+ -gl   1
+ -para 0
+
+
+Motifs:
+ aliphatic K aliphatic G
+ W aromatic basic
+ aromatic R basic aliphatic

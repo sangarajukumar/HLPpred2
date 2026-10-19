@@ -1,0 +1,9 @@
+# Step 1 of 2: conda environment with Python, perl (for MERCI) and pip 24.0.
+# Step 2: pip install --no-deps -r requirements.txt     (see README)
+name: hlppred2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - perl
+  - pip=24.0

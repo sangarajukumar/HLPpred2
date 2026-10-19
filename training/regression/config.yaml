@@ -1,0 +1,42 @@
+dataset:
+  feature_list:
+  - SeqVecEmbedder
+  max_length: 39
+  mean: false
+  merci_file_path_test: /path/to/test_merci_scores.txt
+  merci_file_path_train: /path/to/train_merci_scores.txt
+  probs_file_path_test: /path/to/test_meta_features.csv
+  probs_file_path_train: /path/to/train_meta_features.csv
+  test_data_root: /path/to/test_embeddings
+  test_fasta_path: /path/to/Independent_reg.fasta
+  train_data_root: /path/to/train_embeddings
+  train_fasta_path: /path/to/Training_reg.fasta
+  tran_nlp: true
+model:
+  d_model: 256
+  dilation: 1
+  dp_size: 0.1
+  fc_1: 128
+  feature_dim_list:
+  - 1024
+  kernel_size:
+  - 1
+  - 3
+  - 5
+  max_concatenated_len: 39
+  merci_feature_dim: 0
+  n_head: 4
+  norm_type: norm
+  num_transformer_layers: 6
+  prob_feature_dim: 360
+  stride: 1
+save_config: true
+seed: 69
+trainer:
+  batch_size: 8
+  device: cuda
+  epochs: 100
+  lr: 0.0001
+  n_splits: 5
+  num_workers: 1
+  output_path: /path/to/save_results

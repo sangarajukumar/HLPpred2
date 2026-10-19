@@ -1,0 +1,49 @@
+MERCI - Summary of options:
+ -p    /home/vinoth/SKKU-2025-Projects/Sep-2025-Proj/Hemopi-Proj/17-Motif-Final/1-data/Ind_Pos.fasta
+ -n    /home/vinoth/SKKU-2025-Projects/Sep-2025-Proj/Hemopi-Proj/17-Motif-Final/1-data/Ind_Neg.fasta
+ -k 	  100
+ -fp   5
+ -fn   0
+ -o    /home/vinoth/SKKU-2025-Projects/Sep-2025-Proj/Hemopi-Proj/17-Motif-Final/Motif-files/Independent/pos_motif_1.txt
+ -l    10000
+ -s    10000
+ -c    NONE
+ -g    0
+ -gl   1
+ -para 0
+
+
+Motifs:
+ C F
+ C N
+ H H
+ L L G K
+ A G A
+ C I
+ C Y R
+ F L S
+ G Y
+ H H I
+ I I G
+ L L P
+ S L L G
+ A K Q
+ F L A
+ L K F
+ L L S L L
+ L L S L L G
+ L S L L
+ L S L L G
+ L S L L S
+ L S L L S L
+ L S L L S L L
+ L S L L S L L G
+ P F L
+ P I I
+ S K K
+ S L L G K
+ S L L S L L
+ S L L S L L G
+ V C Y
+ W D
+ Y V
