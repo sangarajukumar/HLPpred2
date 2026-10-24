@@ -13,7 +13,7 @@ from src.pipeline import default_paths, read_fasta, run  # noqa: E402
 def parse_args():
     defaults = default_paths()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--fasta', required=True, help='input FASTA (standard amino acids, 1-39 residues)')
+    parser.add_argument('--fasta', required=True, help='input FASTA (standard amino acids, 6-39 residues)')
     parser.add_argument('--task', choices=['classification', 'classification_wo_merci', 'regression', 'both'],
                         default='both', help="'both' = classification + regression")
     parser.add_argument('--output', default='predictions.csv', help='output CSV (default: %(default)s)')

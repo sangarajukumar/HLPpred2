@@ -150,17 +150,33 @@ models/
 ├── HLPpred2_regression_ML/       # 360 base models
 └── HLPpred2_regression_DL/       # 5 fold checkpoints
 ```
-Then predict directly from a FASTA file (standard amino acids, 1-39 residues). Features are extracted from the sequences, scored by the base models and passed to the deep learning models:
+Then predict directly from a FASTA file (standard amino acids, 6-39 residues). Features are extracted from the sequences, scored by the base models and passed to the deep learning models. The first run downloads the pretrained language models (about 60 GB).
+
+**Classification with MERCI** (hemolytic probability, uses the MERCI motif score):
 ```bash
-python predict.py --fasta example.fasta --models_dir models --output predictions.csv
+python predict.py --task classification --fasta example.fasta --models_dir models --output predictions_classification.csv
 ```
-The first run downloads the pretrained language models (about 60 GB).
+**Classification without MERCI**:
+```bash
+python predict.py --task classification_wo_merci --fasta example.fasta --models_dir models --output predictions_classification_wo_merci.csv
+```
+**Regression** (hemolytic potency, pHC50):
+```bash
+python predict.py --task regression --fasta example.fasta --models_dir models --output predictions_regression.csv
+```
+Without `--task`, classification with MERCI and regression run together (`--task both`).
 
 | Option | Description |
 |---|---|
-| `--task` | `classification`, `classification_wo_merci` (without the MERCI feature), `regression` or `both` (classification + regression, default) |
+| `--task` | `classification`, `classification_wo_merci`, `regression` or `both` (default) |
 | `--device` | `cuda` or `cpu` (default: `cuda` if available) |
 | `--models_dir` | directory with the extracted models (default: `models/`) |
 | `--esm_dir` | clone of the ESM repository (default: `tools/esm`) |
 
-The output CSV contains `hemolytic_probability`, `predicted_class`, `merci_score`, `predicted_pHC50` and `predicted_HC50_uM` for every sequence (pHC50 = 6 - log10 HC50 [µM]).
+Output columns of the CSV file:
+
+| Task | Columns |
+|---|---|
+| `classification` | `hemolytic_probability`, `predicted_class`, `merci_score` |
+| `classification_wo_merci` | `hemolytic_probability_wo_merci`, `predicted_class_wo_merci` |
+| `regression` | `predicted_pHC50`, `predicted_HC50_uM` (pHC50 = 6 - log10 HC50 [µM]) |

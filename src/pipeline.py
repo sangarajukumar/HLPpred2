@@ -18,6 +18,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_DIR = os.path.join(ROOT, 'config')
 MOTIF_DIR = os.path.join(ROOT, 'motif')
 STANDARD_AA = set('ACDEFGHIKLMNPQRSTVWY')
+MIN_LENGTH = 6
 MAX_LENGTH = 39
 BASE_MODELS = {'classification': 'classification', 'classification_wo_merci': 'classification',
                'regression': 'regression'}
@@ -44,8 +45,8 @@ def read_fasta(path):
         invalid = sorted(set(seq) - STANDARD_AA)
         if invalid:
             errors.append(f'{name}: non-standard residue(s) {"".join(invalid)}')
-        if not 1 <= len(seq) <= MAX_LENGTH:
-            errors.append(f'{name}: length {len(seq)} (accepted: 1-{MAX_LENGTH})')
+        if not MIN_LENGTH <= len(seq) <= MAX_LENGTH:
+            errors.append(f'{name}: length {len(seq)} (accepted: {MIN_LENGTH}-{MAX_LENGTH})')
     if errors:
         raise ValueError('Invalid input sequences:\n  ' + '\n  '.join(errors))
     return names, seqs
