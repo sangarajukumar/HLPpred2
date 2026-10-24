@@ -130,7 +130,7 @@ python train.py --config_path config.yaml
 ```
 
 ## Inferencing models
-Download the models from <a href="https://zenodo.org/records/23474229">Zenodo</a> (4.5 GB). The ML archives are split into parts, so the script below downloads all files, verifies the checksums, joins the parts and extracts everything into `models/`:
+Download the models from <a href="https://zenodo.org/records/23474229">Zenodo</a> (4.9 GB). The ML archives are split into parts, so the script below downloads all files, verifies the checksums, joins the parts and extracts everything into `models/`:
 ```bash
 bash download_models.sh models
 ```
@@ -146,6 +146,7 @@ The directory should look like this:
 models/
 ├── HLPpred2_classification_ML/   # 300 base models
 ├── HLPpred2_classification_DL/   # 5 fold checkpoints
+├── HLPpred2_classification_woMERCI_DL/   # 5 fold checkpoints (without MERCI feature)
 ├── HLPpred2_regression_ML/       # 360 base models
 └── HLPpred2_regression_DL/       # 5 fold checkpoints
 ```
@@ -157,7 +158,7 @@ The first run downloads the pretrained language models (about 60 GB).
 
 | Option | Description |
 |---|---|
-| `--task` | `classification`, `regression` or `both` (default) |
+| `--task` | `classification`, `classification_wo_merci` (without the MERCI feature), `regression` or `both` (classification + regression, default) |
 | `--device` | `cuda` or `cpu` (default: `cuda` if available) |
 | `--models_dir` | directory with the extracted models (default: `models/`) |
 | `--esm_dir` | clone of the ESM repository (default: `tools/esm`) |

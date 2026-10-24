@@ -47,13 +47,16 @@ def _pad(embeddings, max_len, device):
 
 @torch.no_grad()
 def predict_classification(models, config, ids, seqvec, base_probs, merci, device, batch_size=64):
-    """Ensemble-mean P(hemolytic) per sequence."""
+    """Ensemble-mean P(hemolytic) per sequence; `merci=None` for models without the MERCI feature."""
     out = {}
     for start in range(0, len(ids), batch_size):
         batch = ids[start:start + batch_size]
         x, mask = _pad([seqvec[i] for i in batch], config['dataset']['max_length'], device)
         probs = torch.stack([base_probs[i] for i in batch]).to(device)
-        scores = torch.tensor([[merci[i]] for i in batch], dtype=torch.float32, device=device)
+        if merci is None:
+            scores = torch.zeros((len(batch), 0), dtype=torch.float32, device=device)
+        else:
+            scores = torch.tensor([[merci[i]] for i in batch], dtype=torch.float32, device=device)
         p = torch.stack([F.softmax(m([x], [mask], probs, scores), dim=-1)[:, 1] for m in models])
         out.update(zip(batch, p.mean(0).tolist()))
     return out

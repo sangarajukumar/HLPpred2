@@ -7,3 +7,7 @@ regression:
   ml_dir: HLPpred2_regression_ML
   dl_dir: HLPpred2_regression_DL
   legacy_padding_mask: true
+
+classification_wo_merci:
+  dl_dir: HLPpred2_classification_woMERCI_DL
+  legacy_padding_mask: true

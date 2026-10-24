@@ -15,6 +15,7 @@ cat > md5sums.txt <<'EOF'
 cfa3fc3da0893b0a7e95e454aa882289  HLPpred2_classification_ML.zip.part00
 35a64cf3a2867991d76a0050b81f6f54  HLPpred2_classification_ML.zip.part01
 d215224afce795f3a6921c54e028d179  HLPpred2_classification_ML.zip.part02
+694efea92a1714fe432bd857a7cad3de  HLPpred2_classification_woMERCI_DL.zip
 c54ad38d21de1403f3ac5b79e5362b64  HLPpred2_regression_DL.zip
 ede41c29a97e0679be929e607e5ffe76  HLPpred2_regression_ML.zip.part00
 e16066d7d10bf5ad826b788f96d21fb5  HLPpred2_regression_ML.zip.part01
@@ -41,5 +42,6 @@ for archive in HLPpred2_*.zip; do
     unzip -q -o "$archive"
 done
 
+rm -rf __MACOSX
 rm -f HLPpred2_*.zip HLPpred2_*.zip.part* md5sums.txt
 echo "Models extracted to $(pwd)"

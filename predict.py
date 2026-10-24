@@ -14,7 +14,8 @@ def parse_args():
     defaults = default_paths()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fasta', required=True, help='input FASTA (standard amino acids, 1-39 residues)')
-    parser.add_argument('--task', choices=['classification', 'regression', 'both'], default='both')
+    parser.add_argument('--task', choices=['classification', 'classification_wo_merci', 'regression', 'both'],
+                        default='both', help="'both' = classification + regression")
     parser.add_argument('--output', default='predictions.csv', help='output CSV (default: %(default)s)')
     parser.add_argument('--device', choices=['cuda', 'cpu'], help='default: cuda if available, else cpu')
     parser.add_argument('--models_dir', default=defaults['models_dir'], help='folder with the model archives')
@@ -25,7 +26,9 @@ def parse_args():
 
 def print_table(df):
     columns = [('sequence_id', 'Sequence ID', 24), ('predicted_class', 'Class', 14),
-               ('hemolytic_probability', 'P(hemolytic)', 13), ('predicted_pHC50', 'pHC50', 7),
+               ('hemolytic_probability', 'P(hemolytic)', 13),
+               ('predicted_class_wo_merci', 'Class (w/o MERCI)', 17),
+               ('hemolytic_probability_wo_merci', 'P (w/o MERCI)', 13), ('predicted_pHC50', 'pHC50', 7),
                ('predicted_HC50_uM', 'HC50 (uM)', 10)]
     columns = [c for c in columns if c[0] in df.columns]
     line = '-' * (sum(w for *_, w in columns) + 3 * (len(columns) - 1))
