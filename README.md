@@ -1,6 +1,13 @@
 <h1 align="center">HLPpred 2.0</h1>
 <p align="center"><a href="https://balalab-skku.org/HLPpred2/">🌐 Webserver (CBBL-SKKU)</a> | <a href="https://zenodo.org/records/23474229">🚩 Models</a></p>
 
+<p align="center">
+<a href="https://github.com/sangarajukumar/HLPpred2/stargazers"><img src="https://img.shields.io/github/stars/sangarajukumar/HLPpred2" alt="stars"></a>
+<a href="https://github.com/sangarajukumar/HLPpred2/network/members"><img src="https://img.shields.io/github/forks/sangarajukumar/HLPpred2" alt="forks"></a>
+<a href="https://github.com/sangarajukumar/HLPpred2/blob/main/LICENSE"><img src="https://img.shields.io/github/license/sangarajukumar/HLPpred2" alt="license"></a>
+<a href="https://doi.org/10.5281/zenodo.23474229"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.23474229.svg" alt="DOI"></a>
+</p>
+
 The official implementation of **HLPpred 2.0: An Interpretable Hybrid Deep Learning Framework for Hemolytic Peptide Classification and Hemolytic Activity Prediction**
 
 > [!IMPORTANT]
