@@ -11,12 +11,12 @@ mkdir -p "$DEST"
 cd "$DEST"
 
 cat > md5sums.txt <<'EOF'
-224a1d32c8a8dddeff36f18df855b10e  HLPpred2_classification_DL.zip
+8ac9df01f80d1d8f762339d714c3582c  HLPpred2_classification_DL.zip
 cfa3fc3da0893b0a7e95e454aa882289  HLPpred2_classification_ML.zip.part00
 35a64cf3a2867991d76a0050b81f6f54  HLPpred2_classification_ML.zip.part01
 d215224afce795f3a6921c54e028d179  HLPpred2_classification_ML.zip.part02
 694efea92a1714fe432bd857a7cad3de  HLPpred2_classification_woMERCI_DL.zip
-c54ad38d21de1403f3ac5b79e5362b64  HLPpred2_regression_DL.zip
+c72ee541eb8a6ecc9d86860d29b6a5b5  HLPpred2_regression_DL.zip
 ede41c29a97e0679be929e607e5ffe76  HLPpred2_regression_ML.zip.part00
 e16066d7d10bf5ad826b788f96d21fb5  HLPpred2_regression_ML.zip.part01
 41f9bf367bd5bccef2b7c93d4048b10d  HLPpred2_regression_ML.zip.part02
